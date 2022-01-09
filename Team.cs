@@ -5,13 +5,13 @@ public class Team
     protected string name;
     protected int number;
 
-    Team(string _string_value, int _int_value)
+    public Team(string name_value, int number_value)
     {
-        name = _string_value;
-        number = _int_value;
+        name = name_value;
+        number = number_value;
     }
 
-    Team()
+    public Team()
     {
         name = "МИЭТ";
         number = 1965;
@@ -25,7 +25,10 @@ public class Team
 
     public int Number
     {
-        get => number;
+        get
+        {
+            return number;
+        }
         set
         {
             if (value <= 0)
@@ -67,5 +70,10 @@ public class Team
     public override int GetHashCode()
     {
         return name.GetHashCode() + number.GetHashCode();
+    }
+
+    public override string ToString()
+    {
+        return "Name: " + name + " ID number: " + number.ToString();
     }
 }
